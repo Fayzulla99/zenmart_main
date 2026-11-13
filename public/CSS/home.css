@@ -187,7 +187,7 @@
 }
 .browse_box img {
   width: 20.22px;
-  height: 18px;
+  height: 20px;/* ASLIDA 18 TEST UCHUN OZGARTIRILDI*/
 }
 .navbar_bott_menu_box .navbar_route_menu {
   width: 670px;
@@ -210,6 +210,7 @@
   display: flex;
   align-items: center;
 }
+/* TEST */
 .sorting_menu span {
   margin-left: 12px;
   color: rgba(255, 255, 255);
