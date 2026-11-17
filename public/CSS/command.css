@@ -13,6 +13,7 @@ p{
   width: 1320px;
   height:auto;
   display: flex;
+  justify-content: center;
 }
 /*Navbar*/
 .navbar_frame {
