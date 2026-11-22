@@ -2,6 +2,18 @@
   display: flex;
   flex-direction: column;
 }
+/*SWIPER*/
+.home_page .swiper_box {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  /* padding-left: 20px;
+  padding-right: 20px; */
+}
+
 .header_frame {
   position: relative;
   margin-top: 47px;
@@ -371,30 +383,53 @@
 }
 .selling_product_frame .container .selling_wrapper {
   margin-top: 50px;
+  width: 1224px;
+  height: 452px;
   display: flex;
   position: relative;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  box-sizing: border-box;
 }
-.selling_product_frame .container .sel_category_box {
+.container .sel_category_box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 306px;
   height: 452px;
+  padding: 0 25px;
   /* padding-right: 20px; */
+  box-sizing: border-box;
 }
-.container .next {
+.container .next img {
   width: 20px;
   height: 20px;
-  position: relative;
-  display: flex;
-  gap: 20px;
+
   cursor: pointer;
 }
-.selling_product_frame .container .sel_category_box h2 {
+.container .next {
+  left: 0;
+  width: 20px;
+  height: 20px;
+
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .swiper-button-next {
+    right: 20px;
+    transform: rotate(90deg);
+  }
+
+  .swiper-button-prev {
+    left: 20px;
+    transform: rotate(90deg);
+  }
+}
+
+.container .swiper-slide h2 {
   color: rgba(98, 105, 116, 1);
 
   font-family: "Jost";
@@ -406,7 +441,7 @@
   text-align: left;
   text-transform: uppercase;
 }
-.selling_product_frame .container .sel_category_box .sel_category_img_box {
+.container .sel_category_box .sel_category_img_box {
   position: relative;
   width: 294px;
   height: 280px;
@@ -415,11 +450,11 @@
   justify-content: center;
   align-items: center;
 }
-.selling_product_frame .container .sel_category_box .sel_category_img_box img {
+.container .sel_category_box .sel_category_img_box img {
   width: 100%;
   height: 100%;
 }
-.selling_product_frame .container .sel_category_box .span1 {
+.container .sel_category_box .span1 {
   color: rgba(4, 30, 66, 1);
 
   font-family: "Jost";
@@ -436,7 +471,7 @@
   margin-top: 10px;
   display: inline-block;
 }
-.selling_product_frame .container .sel_category_box p {
+.container .sel_category_box p {
   display: inline;
   margin-left: 10px;
   color: rgba(98, 105, 116, 1);
@@ -465,8 +500,8 @@
   position: absolute;
   bottom: 0px;
 
-  width: 220px;
-  height: 45px;
+  width: 190px;
+  height: 35px;
 
   display: flex;
   justify-content: center;
@@ -613,7 +648,7 @@
 }
 .headph_frame .headph_left_box {
   position: relative;
-  width: 664px;
+  width: 665px;
   height: 368px;
   border-radius: 6px;
   background: rgba(243, 245, 246, 1);
@@ -679,16 +714,19 @@
   height: 309px;
 }
 .headph_frame .headph_right_box {
-  width: 650px;
+  position: relative;
+  width: 655px;
   height: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 295px 295px;
+  row-gap: 28px;
+  column-gap: 32px;
+  padding-left: 32px;
 }
 .headph_frame .headph_right_box .item_box1 {
   position: relative;
-  margin-left: 30px;
-  width: 293px;
+
+  width: 294px;
   height: 170px;
   border-radius: 6px;
   background: rgba(243, 245, 246, 1);
@@ -790,7 +828,7 @@
   align-items: center;
   width: 230px;
   height: 450px;
-  padding: 0 30px;
+  padding: 0 40px;
   box-sizing: border-box;
 }
 
@@ -900,4 +938,237 @@
   line-height: 26px;
   letter-spacing: 0%;
   text-align: left;
+}
+/*===================================================================================*/
+.deal_frame {
+  width: 100%;
+  height: 625px;
+  background-image: url("../images/icons/header_bg.svg");
+  background-color: rgba(0, 83, 246);
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-image: round;
+}
+.deal_frame .container {
+  flex-direction: row;
+}
+.deal_box {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.deal_time {
+  width: 334px;
+  height: 214px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+.deal_time .time_sort {
+  display: grid;
+  grid-template-areas:
+    "time_num time_num time_num time_num"
+    "time_title time_title time_title time_title";
+  grid-template-columns: 4fr 4fr;
+  column-gap: 30px;
+  box-sizing: content-box;
+}
+.time_num {
+  color: rgba(255, 255, 255, 1);
+
+  font-family: "Jost";
+  font-style: Medium;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 0%;
+}
+.deal_time span {
+  color: rgba(255, 255, 255, 1);
+
+  font-family: "Jost";
+  font-style: Medium;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 0%;
+}
+.deal_time .time_title {
+  color: rgba(255, 255, 255, 1);
+
+  font-family: "Jost";
+  font-style: Medium;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0%;
+}
+.deal_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 141.79px;
+  height: 52px;
+
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 1);
+  color: rgba(4, 30, 66, 1);
+
+  font-family: "Jost";
+  font-style: Medium;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+/*======================================================*/
+.deal_category_box {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  background: rgba(255, 255, 255, 1);
+  width: 205px;
+  height: 392px;
+  /* padding-right: 20px; */
+  box-sizing: border-box;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 15px;
+  margin: 0 5px;
+}
+.deal_category {
+  position: relative;
+  width: 910px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .swiper-slide .deal_category_img_box {
+  position: relative;
+  width: 168px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.container .deal_category_box h2 {
+  color: rgba(98, 105, 116, 1);
+
+  font-family: "Jost";
+  font-style: Regular;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: uppercase;
+}
+.container .deal_category_box .deal_category_img_box {
+  position: relative;
+  width: 168px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .deal_category_img_box img {
+  width: 100%;
+  height: 100%;
+}
+.container .deal_category_box .span2 {
+  color: rgba(4, 30, 66, 1);
+
+  font-family: "Jost";
+  font-style: Medium;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: left;
+  display: inline-block;
+  padding-right: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container .deal_category_box .under_text {
+  width: 100%;
+  height: 392px;
+  display: inline-block;
+  flex-direction: column;
+}
+.container .deal_category_box p {
+  display: inline;
+  margin-left: 0;
+  color: rgba(98, 105, 116, 1);
+  margin-right: 0px;
+
+  font-family: "Jost";
+  font-style: Regular;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.container .deal_category_box .product_price {
+  color: rgba(4, 30, 66, 1);
+
+  font-family: "Jost";
+  font-style: Medium;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.container .deal_category_box .button {
+  position: absolute;
+  bottom: 0px;
+
+  width: 100px;
+  height: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+
+  font-family: "Jost";
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-align: center;
+
+  padding: 15px 35px 15px 35px;
+  border-radius: 40px;
+  background: rgba(0, 83, 246, 1);
+  opacity: 0;
+  cursor: pointer;
+  transform: translateY(10px);
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+.container .deal_category_box:hover .button {
+  opacity: 1;
+  transform: translateY(0);
 }
